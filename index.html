@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaussian Points - SketchUp Plugin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="animated-background">
+    <!-- Blur circles -->
+    <div class="blur-circle circle1"></div>
+    <div class="blur-circle circle2"></div>
+    <div class="blur-circle circle3"></div>
+    
+    <!-- Geometric shapes -->
+    <div class="geometric-shape triangle triangle1"></div>
+    <div class="geometric-shape triangle triangle2"></div>
+    <div class="geometric-shape square square1"></div>
+    <div class="geometric-shape square square2"></div>
+    <div class="geometric-shape rectangle rectangle1"></div>
+    <div class="geometric-shape rectangle rectangle2"></div>
+    <div class="geometric-shape dot dot1"></div>
+    <div class="geometric-shape dot dot2"></div>
+    <div class="geometric-shape dot dot3"></div>
+  </div>
+  
+  <!-- Theme toggle -->
+  <div class="theme-toggle" id="theme-toggle">
+    <div class="toggle-icon sun"><i class="fas fa-sun" style="font-size: 14px; color: #f1c40f;"></i></div>
+    <div class="toggle-handle"></div>
+    <div class="toggle-icon moon"><i class="fas fa-moon" style="font-size: 14px; color: #f1c40f;"></i></div>
+  </div>
+  
+  <!-- Контейнер для кнопок с "палкой" -->
+  <div class="buttons-rod">
+    <!-- Fullscreen button -->
+    <div class="fullscreen-button" id="fullscreen-button">
+      <i class="fas fa-expand"></i>
+    </div>
+    
+    <!-- Language toggle button -->
+    <div class="language-button" id="language-button">
+      <span class="current-lang">EN</span>
+    </div>
+    
+    <!-- Source button -->
+    <div class="source-button" id="source-button">
+      <i class="fas fa-file-alt"></i>
+    </div>
+
+        <!-- Back button -->
+    <div class="back-button" id="back-button">
+      <i class="fas fa-arrow-left"></i>
+    </div>
+  </div>
+  
+  <!-- Progress indicator -->
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+  
+  <!-- Navigation dots -->
+  <div class="nav-dots" id="nav-dots">
+    <!-- Dots will be added with JavaScript -->
+  </div>
+  
+  <!-- Navigation buttons -->
+  <div class="nav-buttons">
+    <div class="nav-button" id="prev-button">
+      <span style="font-size: 20px; color: var(--text-primary);">▲</span>
+    </div>
+    <div class="nav-button" id="next-button">
+      <span style="font-size: 20px; color: var(--text-primary);">▼</span>
+    </div>
+  </div>
+  
+  <!-- Slides container -->
+  <div class="slides-container" id="slides-container">
+    <!-- Slide 1: Title -->
+    <div class="slide" id="slide-1">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="title">Gaussian Points</h1>
+        <h2 class="slide-subtitle" data-lang="subtitle">Revolutionary Point Cloud & Gaussian Splatting Plugin for SketchUp</h2>
+        
+        <div class="icon-grid">
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(52, 152, 219, 0.2);">
+              <i class="fas fa-cube" style="color: #3498db;"></i>
+            </div>
+            <div class="icon-name" data-lang="sketchup">SketchUp</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(46, 204, 113, 0.2);">
+              <i class="fas fa-project-diagram" style="color: #2ecc71;"></i>
+            </div>
+            <div class="icon-name" data-lang="point_clouds">Point Clouds</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(155, 89, 182, 0.2);">
+              <i class="fas fa-atom" style="color: #9b59b6;"></i>
+            </div>
+            <div class="icon-name" data-lang="gaussian_splatting">Gaussian Splatting</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(230, 126, 34, 0.2);">
+              <i class="fas fa-bolt" style="color: #e67e22;"></i>
+            </div>
+            <div class="icon-name" data-lang="performance">Performance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 2: Problem -->
+    <div class="slide" id="slide-2">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="problem_title">The Problem</h1>
+        
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-dollar-sign" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="expensive_options">Expensive Options</h3>
+              <p data-lang="expensive_options_desc">Existing point cloud plugins for SketchUp are prohibitively expensive (~$100/month)</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-tachometer-alt" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="performance_issues">Performance Issues</h3>
+              <p data-lang="performance_issues_desc">Current solutions struggle with large point clouds, causing significant slowdowns</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-eye" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="visualization_quality">Visualization Quality</h3>
+              <p data-lang="visualization_quality_desc">Point clouds look pixelated and unrealistic, especially up close</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-cogs" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="limited_functionality">Limited Functionality</h3>
+              <p data-lang="limited_functionality_desc">No support for advanced features like Gaussian Splatting in existing plugins</p>
+            </div>
+          </li>
+        </ul>
+        
+        <p class="slide-text" data-lang="problem_summary">
+          Architects and designers need an affordable, high-performance solution to visualize and work with point cloud data in their preferred design tool.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Slide 3: Solution + Target Market -->
+    <div class="slide" id="slide-3">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="solution_title">Our Solution</h1>
+        <h2 class="slide-subtitle" data-lang="solution_subtitle">Gaussian Points</h2>
+        
+        <p class="slide-text" data-lang="solution_desc">
+          Gaussian Points is a revolutionary plugin for SketchUp that provides high-performance point cloud processing and visualization, featuring industry-first Gaussian Splatting technology for photorealistic rendering.
+        </p>
+        
+        <div class="mockup-container">
+          <img src="images/GSpluginScreenshot.png" alt="Gaussian Points Plugin Screenshot" class="mockup-image">
+        </div>
+        
+        <h2 class="slide-subtitle" style="margin-top: 30px; font-size: 22px;" data-lang="target_market">Target Market</h2>
+        
+        <div class="icon-grid">
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(52, 152, 219, 0.2);">
+              <i class="fas fa-building" style="color: #3498db;"></i>
+            </div>
+            <div class="icon-name" data-lang="architects">Architects</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(46, 204, 113, 0.2);">
+              <i class="fas fa-city" style="color: #2ecc71;"></i>
+            </div>
+            <div class="icon-name" data-lang="urban_planners">Urban Planners</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(155, 89, 182, 0.2);">
+              <i class="fas fa-couch" style="color: #9b59b6;"></i>
+            </div>
+            <div class="icon-name" data-lang="interior_designers">Interior Designers</div>
+          </div>
+          
+          <div class="icon-wrapper">
+            <div class="icon" style="background: rgba(230, 126, 34, 0.2);">
+              <i class="fas fa-hard-hat" style="color: #e67e22;"></i>
+            </div>
+            <div class="icon-name" data-lang="engineers">Engineers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 4: Market Opportunity -->
+    <div class="slide" id="slide-4">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="market_opportunity">Market Opportunity</h1>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-value">1M+</div>
+            <div class="stat-label" data-lang="active_users">Active SketchUp Users</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value">$3.25B</div>
+            <div class="stat-label" data-lang="arch_software_market">Architecture Software Market (2024)</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value">$2.0B</div>
+            <div class="stat-label" data-lang="point_cloud_market">Point Cloud Software Market (2025)</div>
+          </div>
+        </div>
+        
+        <div style="display: flex; gap: 30px; margin-top: 20px;">
+          <div style="flex: 1;">
+            <div class="chart">
+              <div class="chart-title" data-lang="users_by_geography">SketchUp Users by Geography</div>
+              <div class="chart-canvas-container">
+                <canvas id="geo-chart"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div style="flex: 1;">
+            <div class="chart">
+              <div class="chart-title" data-lang="users_by_profession">SketchUp User Breakdown by Profession</div>
+              <div class="chart-canvas-container">
+                <canvas id="profession-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="slide-text" style="margin-top: 20px;" data-lang="market_potential">
+          Even capturing just 5% of professional SketchUp users who work with point clouds (approximately 2,500-5,000 users) would yield a substantial market opportunity.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Slide 5: How it Works -->
+    <div class="slide" id="slide-5">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="how_it_works">How It Works</h1>
+        
+        <div class="how-it-works-container">
+          <div class="how-it-works-text">
+            <p class="slide-text" data-lang="how_it_works_desc">
+              Gaussian Points uses a hybrid Ruby/C++ implementation with low-level OpenGL hooks to render millions of points at interactive framerates.
+            </p>
+            
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-file-import" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="multi_format">Multi-format Support</h3>
+                  <p data-lang="multi_format_desc">Import point clouds from e57, LAS, PLY, and other industry-standard formats</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-microchip" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="low_level">Low-level Optimization</h3>
+                  <p data-lang="low_level_desc">Direct OpenGL integration using VBO rendering for maximum performance</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-atom" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="gaussian_tech">Gaussian Splatting</h3>
+                  <p data-lang="gaussian_tech_desc">Revolutionary rendering technique that creates smooth, photorealistic surfaces from points</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-tools" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="toolset">Powerful Toolset</h3>
+                  <p data-lang="toolset_desc">Clipping planes, scaling controls, and interactive manipulation tools</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="image-side">
+            <img src="images/GSvsRP.jpg" alt="Gaussian Splatting vs Regular Points" class="side-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 6: Value Proposition -->
+    <div class="slide" id="slide-6">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="value_proposition">Value Proposition</h1>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-value">2x</div>
+            <div class="stat-label" data-lang="faster_generation">Faster Scene Workflows</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value">Photoreal</div>
+            <div class="stat-label" data-lang="visual_accuracy">Photorealistic Rendering</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value">60 FPS</div>
+            <div class="stat-label" data-lang="fps_performance">Smooth Performance</div>
+          </div>
+        </div>
+        
+        <div class="cinema-meme-container">
+          <div class="meme-features-left">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-money-bill-wave" style="font-size: 24px; color: #3498db;"></i>
+              </div>
+              <div class="feature-text">
+                <h3 data-lang="cost_effective">Cost Effective</h3>
+                <p data-lang="cost_effective_desc">Free tier for basic point cloud functionality, affordable premium for Gaussian Splatting</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-rocket" style="font-size: 24px; color: #3498db;"></i>
+              </div>
+              <div class="feature-text">
+                <h3 data-lang="unmatched_performance">Optimized Performance</h3>
+                <p data-lang="unmatched_performance_desc">Work with large point clouds with responsive controls and smoother interaction</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="meme-image">
+            <img src="images/absolute-cinema.jpg" alt="Absolute Cinema" class="absolute-cinema-meme">
+          </div>
+          
+          <div class="meme-features-right">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-eye" style="font-size: 24px; color: #3498db;"></i>
+              </div>
+              <div class="feature-text">
+                <h3 data-lang="photo_visualization">Photorealistic Visualization</h3>
+                <p data-lang="photo_visualization_desc">Gaussian Splatting creates continuous, detailed surfaces with accurate reflections and textures - eliminating the need to manually model complex elements</p>
+              </div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-brain" style="font-size: 24px; color: #3498db;"></i>
+              </div>
+              <div class="feature-text">
+                <h3 data-lang="next_gen">Next-Generation Technology</h3>
+                <p data-lang="next_gen_desc">Be at the forefront of architectural visualization with cutting-edge rendering techniques</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 7: Competitors -->
+    <div class="slide" id="slide-7">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="competitive_landscape">Competitive Landscape</h1>
+        
+        <div style="display: flex; gap: 30px; margin-top: 20px;">
+          <div style="flex: 1;">
+            <div class="chart" style="width: 100%; height: 320px;">
+              <div class="chart-title" data-lang="performance_comparison">Performance Comparison (Rendering 100M Points)</div>
+              <div class="chart-canvas-container">
+                <canvas id="performance-chart"></canvas>
+              </div>
+            </div>
+          </div>
+          
+          <div style="flex: 1.2;">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th data-lang="feature">Feature</th>
+                  <th data-lang="gaussian_points">Gaussian Points</th>
+                  <th data-lang="trimble">Trimble Scan Essentials</th>
+                  <th data-lang="undet">Undet for SketchUp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-lang="point_cloud_support">Point Cloud Support</td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                </tr>
+                <tr>
+                  <td data-lang="gaussian_splatting">Gaussian Splatting</td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td class="x"><div class="xmark"><i class="fas fa-times" style="font-size: 12px;"></i></div></td>
+                  <td class="x"><div class="xmark"><i class="fas fa-times" style="font-size: 12px;"></i></div></td>
+                </tr>
+                <tr>
+                  <td data-lang="free_tier">Free Tier Available</td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td class="x"><div class="xmark"><i class="fas fa-times" style="font-size: 12px;"></i></div></td>
+                  <td class="x"><div class="xmark"><i class="fas fa-times" style="font-size: 12px;"></i></div></td>
+                </tr>
+                <tr>
+                  <td data-lang="high_performance">High-Performance Rendering</td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td data-lang="partial">Partial</td>
+                  <td data-lang="partial">Partial</td>
+                </tr>
+                <tr>
+                  <td data-lang="realistic_viz">Realistic Visualization</td>
+                  <td class="check"><div class="checkmark"><i class="fas fa-check" style="font-size: 12px;"></i></div></td>
+                  <td data-lang="limited">Limited</td>
+                  <td data-lang="limited">Limited</td>
+                </tr>
+                <tr>
+                  <td data-lang="price">Price</td>
+                  <td data-lang="basic_price">$0 (Basic) to $30-50/mo (Premium)</td>
+                  <td data-lang="trimble_price">$699/year (in SketchUp Studio)</td>
+                  <td data-lang="undet_price">€500/year or €89/month</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <p class="slide-text" style="margin-top: 20px;" data-lang="competitive_summary">
+          While competitors offer basic point cloud functionality, Gaussian Points is the only solution that combines affordability, high performance, and cutting-edge Gaussian Splatting technology.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Slide 8: Business Model/Monetization -->
+    <div class="slide" id="slide-8">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="business_model">Business Model</h1>
+        
+        <div style="display: flex; gap: 30px; margin-top: 20px;">
+          <div style="flex: 1;">
+            <ul class="feature-list">
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-layer-group" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="freemium">Freemium Approach</h3>
+                  <p data-lang="freemium_desc">Basic point cloud visualization free, premium features (including Gaussian Splatting) paid</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-money-check-alt" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="subscription">Subscription Model</h3>
+                  <p data-lang="subscription_desc">$30-50/month for premium features or $299/year, with volume discounts for firms</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-handshake" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="partnerships">Strategic Partnerships</h3>
+                  <p data-lang="partnerships_desc">Potential bundling with laser scanner manufacturers and scanning service providers</p>
+                </div>
+              </li>
+              
+              <li class="feature-item">
+                <div class="feature-icon">
+                  <i class="fas fa-chart-line" style="font-size: 24px; color: #3498db;"></i>
+                </div>
+                <div class="feature-text">
+                  <h3 data-lang="revenue_projection">Revenue Projection</h3>
+                  <p data-lang="revenue_projection_desc">With just 5% market capture (~5,000 users), potential $1.25-$2.5M annual recurring revenue</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div style="flex: 1;">
+            <div class="chart" style="width: 100%; height: 320px; margin-top: 0;">
+              <div class="chart-title" data-lang="projected_revenue">5-Year Projected Revenue</div>
+              <div class="chart-canvas-container">
+                <canvas id="revenue-chart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 9: Team -->
+    <div class="slide" id="slide-9">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="team">Our Team</h1>
+        
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="team-photo" style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2)); border: 2px solid rgba(52, 152, 219, 0.3);">
+              <img src="images/Team-lead.png" alt="Team Member Photo" onerror="this.onerror=null; this.src='/api/placeholder/150/150'; this.parentElement.style.background='linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2))';">
+            </div>
+            <div class="team-name">Shukh Illia Anatoliyovych</div>
+            <div class="team-role" style="color: #3498db;" data-lang="founder">Founder & Lead Developer</div>
+            <div class="team-bio" data-lang="founder_bio">
+              Experienced software engineer with expertise in computer graphics, 3D visualization, and SketchUp plugin development.
+            </div>
+          </div>
+          
+          <div class="team-member">
+            <div class="team-photo" style="background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(231, 76, 60, 0.2)); border: 2px solid rgba(155, 89, 182, 0.3);">
+              <i class="fas fa-robot" style="font-size: 50px; color: rgba(155, 89, 182, 0.8);"></i>
+            </div>
+            <div class="team-name" data-lang="ai_assistant">AI Assistant</div>
+            <div class="team-role" style="color: #9b59b6;" data-lang="dev_support">Development Support</div>
+            <div class="team-bio" data-lang="ai_bio">
+              Cutting-edge AI assistance for code optimization, testing, and documentation, helping to accelerate development cycles.
+            </div>
+          </div>
+          
+          <div class="team-member">
+            <div class="team-photo" style="background: linear-gradient(135deg, rgba(46, 204, 113, 0.2), rgba(52, 152, 219, 0.2)); border: 2px solid rgba(46, 204, 113, 0.3);">
+              <i class="fas fa-user-tie" style="font-size: 50px; color: rgba(46, 204, 113, 0.8);"></i>
+            </div>
+            <div class="team-name" data-lang="advisor">[Future Advisor]</div>
+            <div class="team-role" style="color: #2ecc71;" data-lang="tech_advisor">Technical Advisor</div>
+            <div class="team-bio" data-lang="advisor_bio">
+              Position open for industry expert with background in 3D visualization, architectural software, or point cloud processing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 10: Project Track/Results/Timeline -->
+    <div class="slide" id="slide-10">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="roadmap">Development Roadmap</h1>
+        
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date" data-lang="q1_2025">Q1 2025</div>
+            <div class="timeline-title" data-lang="prototype">Working Prototype (Completed)</div>
+            <div class="timeline-description" data-lang="prototype_desc">
+              Core point cloud loading and visualization functionality, OpenGL integration, and basic Gaussian Splatting implementation
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date" data-lang="q2_2025">Q2 2025</div>
+            <div class="timeline-title" data-lang="beta">Beta Release (In Progress)</div>
+            <div class="timeline-description" data-lang="beta_desc">
+              Feature complete plugin with optimized performance, official file format support, and full Gaussian Splatting capability
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date" data-lang="q3_2025">Q3 2025</div>
+            <div class="timeline-title" data-lang="launch">Public Launch</div>
+            <div class="timeline-description" data-lang="launch_desc">
+              Extension Warehouse release, marketing campaign, and freemium model implementation
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date" data-lang="q1_2026">Q1 2026</div>
+            <div class="timeline-title" data-lang="expansion">Expansion</div>
+            <div class="timeline-description" data-lang="expansion_desc">
+              Advanced features (AI object recognition, automation), platform expansion (Rhino, Revit), and enterprise solutions
+            </div>
+          </div>
+        </div>
+        
+        <div class="mockup-container" style="margin-top: 40px;">
+          <img src="images/current-progress.jpg" alt="Current Progress Screenshot" class="mockup-image">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 11: The Ask -->
+    <div class="slide" id="slide-11">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="investment">Investment Opportunity</h1>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-value">$250K</div>
+            <div class="stat-label" data-lang="seed_round">Seed Round Target</div>
+          </div>
+        </div>
+        
+        <ul class="feature-list">
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-code" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="dev_resources">Development Resources</h3>
+              <p data-lang="dev_resources_desc">60% - Accelerate development, add additional developers, and enhance core functionality</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-bullhorn" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="marketing">Marketing & User Acquisition</h3>
+              <p data-lang="marketing_desc">25% - Targeted campaigns for architecture firms, educational content, and community building</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-server" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="infrastructure">Infrastructure</h3>
+              <p data-lang="infrastructure_desc">10% - Cloud processing capabilities, licensing infrastructure, and testing environment</p>
+            </div>
+          </li>
+          
+          <li class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-balance-scale" style="font-size: 24px; color: #3498db;"></i>
+            </div>
+            <div class="feature-text">
+              <h3 data-lang="operations">Operations</h3>
+              <p data-lang="operations_desc">5% - Legal, accounting, and operational requirements</p>
+            </div>
+          </li>
+        </ul>
+        
+        <p class="slide-text" style="margin-top: 30px; text-align: center; font-weight: 600;" data-lang="investment_summary">
+          Investment will accelerate time-to-market and help capture first-mover advantage in the emerging Gaussian Splatting visualization space
+        </p>
+      </div>
+    </div>
+    
+    <!-- Slide 12: Final Slide (Bio + Contacts) -->
+    <div class="slide" id="slide-12">
+      <div class="slide-content">
+        <h1 class="slide-title" data-lang="thank_you">Thank You</h1>
+        <h2 class="slide-subtitle" data-lang="revolution">Let's revolutionize architectural visualization together</h2>
+        
+        <div class="mockup-container">
+          <img src="images/final-image.png" alt="Gaussian Points Final Image" class="mockup-image">
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">illia.shuh@gmail.com</div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">+380982129764</div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="contact-text">https://t.me/Kengatt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Analysis container -->
+  <div class="analysis-container" id="analysis-container">
+    <div class="analysis-content">
+      <h1 class="analysis-title">Source Analysis</h1>
+      <div class="analysis-text">
+        <!-- Content will be loaded from analysis-content.js -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Keyboard navigation hint -->
+  <div class="navigation-hint" id="navigation-hint">
+    <div class="arrow-key">←</div>
+    <div class="arrow-key">→</div>
+    <div class="hint-text">Use arrow keys to navigate between presentation and source</div>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/analysis-content.js"></script>
+</body>
+</html>

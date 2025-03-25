@@ -1,0 +1,32 @@
+/* Responsive design */
+@media (max-width: 768px) {
+    .slide-content {
+      width: 90%;
+      padding: 30px;
+    }
+    
+    .slide-title {
+      font-size: 32px;
+    }
+    
+    .slide-subtitle {
+      font-size: 18px;
+    }
+    
+    .slide-text {
+      font-size: 16px;
+    }
+    
+    .chart {
+      width: 100%;
+    }
+    
+    .icon-grid {
+      gap: 15px;
+    }
+    
+    .icon-wrapper {
+      width: 100px;
+      height: 100px;
+    }
+  }
