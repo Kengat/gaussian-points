@@ -139,6 +139,10 @@ const translations = {
     thank_you: "Thank You",
     revolution: "Let's transform architectural visualization together",
     
+    // Slide 12: Support
+    support_title: "Plugin \"GaussianPoints\" is supported by",
+    support_logo_alt: "EUS Link Logo",
+    
     // Chart labels
     geo_chart_labels: ['United States', 'UK', 'Europe (other)', 'Asia', 'Rest of World'],
     profession_chart_labels: ['Architects', 'Interior Designers', 'Urban Planners', 'Engineers', 'Others'],
@@ -284,6 +288,10 @@ const translations = {
     // Slide 11: Thank You
     thank_you: "Дякуємо",
     revolution: "Давайте разом трансформуємо архітектурну візуалізацію",
+    
+    // Slide 12: Support
+    support_title: "Плагін \"GaussianPoints\" розроблено за підтримки",
+    support_logo_alt: "Логотип EUS Link",
     
     // Chart labels
     geo_chart_labels: ['Сполучені Штати', 'Велика Британія', 'Європа (інше)', 'Азія', 'Решта світу'],
