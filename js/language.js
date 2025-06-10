@@ -41,15 +41,15 @@ const translations = {
     
     // Slide 4: How it Works
     how_it_works: "How It Works",
-    how_it_works_desc: "Gaussian Points uses a hybrid Ruby/C++ implementation with low-level OpenGL hooks to render millions of points efficiently.",
-    multi_format: "Multi-format Support",
-    multi_format_desc: "Import point clouds from e57, LAS, PLY, and other industry-standard formats",
-    low_level: "Low-level Optimization",
-    low_level_desc: "Direct OpenGL integration using VBO rendering for improved performance",
-    gaussian_tech: "Gaussian Splatting",
-    gaussian_tech_desc: "Advanced rendering technique that creates smooth, photorealistic surfaces from points",
-    toolset: "Powerful Toolset",
-    toolset_desc: "Clipping planes, scaling controls, and interactive manipulation tools",
+    how_it_works_desc: "From a 3D scan to a client-ready presentation in just a few steps. Here's how architects use Gaussian Points to bring their visions to life.",
+    multi_format: "1. Get Your Scan",
+    multi_format_desc: "Start with data from any 3D laser scanner or drone. Our plugin handles all major file types.",
+    low_level: "2. Import to SketchUp",
+    low_level_desc: "One click is all it takes to bring your point cloud into SketchUp. No complex settings, just instant results.",
+    gaussian_tech: "3. Model on a Real Backdrop",
+    gaussian_tech_desc: "Design directly onto the photorealistic scan, ensuring your project fits perfectly with its real-world surroundings.",
+    toolset: "4. Wow Your Clients",
+    toolset_desc: "Present your work in a context your clients will understand immediately, leading to faster approvals and better feedback.",
     
     // Slide 5: Value Proposition
     value_proposition: "Value Proposition",
@@ -187,15 +187,15 @@ const translations = {
     
     // Slide 4: How it Works
     how_it_works: "Як це працює",
-    how_it_works_desc: "Gaussian Points використовує гібридну реалізацію Ruby/C++ з низькорівневими хуками OpenGL для ефективного відображення мільйонів точок.",
-    multi_format: "Підтримка багатьох форматів",
-    multi_format_desc: "Імпорт хмар точок з форматів e57, LAS, PLY та інших галузевих стандартів",
-    low_level: "Низькорівнева оптимізація",
-    low_level_desc: "Пряма інтеграція з OpenGL з використанням VBO-рендерингу для підвищеної продуктивності",
-    gaussian_tech: "Gaussian Splatting",
-    gaussian_tech_desc: "Передова техніка рендерингу, яка створює плавні, фотореалістичні поверхні з точок",
-    toolset: "Потужний набір інструментів",
-    toolset_desc: "Площини відсікання, елементи керування масштабуванням та інструменти інтерактивної маніпуляції",
+    how_it_works_desc: "Від 3D-скану до готової презентації для клієнта всього за кілька кроків. Ось як архітектори використовують Gaussian Points, щоб втілювати свої ідеї в життя.",
+    multi_format: "1. Отримайте скан",
+    multi_format_desc: "Почніть з даних, отриманих з будь-якого 3D-лазерного сканера або дрона. Наш плагін підтримує всі основні типи файлів.",
+    low_level: "2. Імпортуйте в SketchUp",
+    low_level_desc: "Один клік — це все, що потрібно, щоб перенести вашу хмару точок у SketchUp. Жодних складних налаштувань, лише миттєвий результат.",
+    gaussian_tech: "3. Моделюйте на реальному фоні",
+    gaussian_tech_desc: "Проектуйте безпосередньо на фотореалістичному скані, гарантуючи, що ваш проект ідеально впишеться в реальне оточення.",
+    toolset: "4. Вразьте своїх клієнтів",
+    toolset_desc: "Презентуйте свою роботу в контексті, який клієнти зрозуміють миттєво, що призведе до швидших узгоджень та кращого зворотного зв'язку.",
     
     // Slide 5: Value Proposition
     value_proposition: "Ціннісна пропозиція",

@@ -219,3 +219,11 @@
     right: 15%;
     animation: dotFloat 14s infinite ease-in-out 1s;
   }
+
+  /* Disable text selection when slide 1 is active (for logo interaction) */
+  body.slide-1-active {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }

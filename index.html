@@ -85,6 +85,9 @@
     <!-- Slide 1: Title -->
     <div class="slide" id="slide-1">
       <div class="slide-content">
+        <div class="logo-container">
+          <img src="images/logo.png" alt="Logo" class="logo-image" draggable="false">
+        </div>
         <h1 class="slide-title" data-lang="title">Gaussian Points</h1>
         <h2 class="slide-subtitle" data-lang="subtitle">Revolutionary Point Cloud & Gaussian Splatting Plugin for SketchUp</h2>
         
@@ -183,39 +186,44 @@
           Gaussian Points is a revolutionary plugin for SketchUp that provides high-performance point cloud processing and visualization, featuring industry-first Gaussian Splatting technology for photorealistic rendering.
         </p>
         
-        <div class="mockup-container">
-          <img src="images/GSpluginScreenshot.png" alt="Gaussian Points Plugin Screenshot" class="mockup-image">
-        </div>
-        
-        <h2 class="slide-subtitle" style="margin-top: 30px; font-size: 22px;" data-lang="target_market">Target Market</h2>
-        
-        <div class="icon-grid">
-          <div class="icon-wrapper">
-            <div class="icon" style="background: rgba(52, 152, 219, 0.2);">
-              <i class="fas fa-building" style="color: #3498db;"></i>
+        <div style="display: flex; gap: 30px; align-items: center; margin-top: 30px;">
+          <div style="flex: 1.5;">
+            <div class="mockup-container">
+              <img src="images/GSvsRP.jpg" alt="Gaussian Splatting vs Regular Points" class="mockup-image">
             </div>
-            <div class="icon-name" data-lang="architects">Architects</div>
           </div>
-          
-          <div class="icon-wrapper">
-            <div class="icon" style="background: rgba(46, 204, 113, 0.2);">
-              <i class="fas fa-city" style="color: #2ecc71;"></i>
+          <div style="flex: 1;">
+            <h2 class="slide-subtitle" style="margin-top: 0; font-size: 22px; text-align: left;" data-lang="target_market">Target Market</h2>
+            
+            <div class="icon-grid">
+              <div class="icon-wrapper">
+                <div class="icon" style="background: rgba(52, 152, 219, 0.2);">
+                  <i class="fas fa-building" style="color: #3498db;"></i>
+                </div>
+                <div class="icon-name" data-lang="architects">Architects</div>
+              </div>
+              
+              <div class="icon-wrapper">
+                <div class="icon" style="background: rgba(46, 204, 113, 0.2);">
+                  <i class="fas fa-city" style="color: #2ecc71;"></i>
+                </div>
+                <div class="icon-name" data-lang="urban_planners">Urban Planners</div>
+              </div>
+              
+              <div class="icon-wrapper">
+                <div class="icon" style="background: rgba(155, 89, 182, 0.2);">
+                  <i class="fas fa-couch" style="color: #9b59b6;"></i>
+                </div>
+                <div class="icon-name" data-lang="interior_designers">Interior Designers</div>
+              </div>
+              
+              <div class="icon-wrapper">
+                <div class="icon" style="background: rgba(230, 126, 34, 0.2);">
+                  <i class="fas fa-hard-hat" style="color: #e67e22;"></i>
+                </div>
+                <div class="icon-name" data-lang="engineers">Engineers</div>
+              </div>
             </div>
-            <div class="icon-name" data-lang="urban_planners">Urban Planners</div>
-          </div>
-          
-          <div class="icon-wrapper">
-            <div class="icon" style="background: rgba(155, 89, 182, 0.2);">
-              <i class="fas fa-couch" style="color: #9b59b6;"></i>
-            </div>
-            <div class="icon-name" data-lang="interior_designers">Interior Designers</div>
-          </div>
-          
-          <div class="icon-wrapper">
-            <div class="icon" style="background: rgba(230, 126, 34, 0.2);">
-              <i class="fas fa-hard-hat" style="color: #e67e22;"></i>
-            </div>
-            <div class="icon-name" data-lang="engineers">Engineers</div>
           </div>
         </div>
       </div>
@@ -324,7 +332,7 @@
           </div>
           
           <div class="image-side">
-            <img src="images/GSvsRP.jpg" alt="Gaussian Splatting vs Regular Points" class="side-image">
+            <img src="images/GSpluginScreenshot.png" alt="Gaussian Points Plugin Screenshot" class="side-image">
           </div>
         </div>
       </div>
@@ -549,10 +557,12 @@
             <div class="team-photo" style="background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2)); border: 2px solid rgba(52, 152, 219, 0.3);">
               <img src="images/Team-lead.png" alt="Team Member Photo" onerror="this.onerror=null; this.src='/api/placeholder/150/150'; this.parentElement.style.background='linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.2))';">
             </div>
-            <div class="team-name">Shukh Illia Anatoliyovych</div>
-            <div class="team-role" style="color: #3498db;" data-lang="founder">Founder & Lead Developer</div>
-            <div class="team-bio" data-lang="founder_bio">
-              Architect-urbanist with experience in 3D visualization, parametric design, and developing innovative solutions for architectural workflows.
+            <div class="team-details">
+              <div class="team-name">Shukh Illia Anatoliyovych</div>
+              <div class="team-role" style="color: #3498db;" data-lang="founder">Founder & Lead Developer</div>
+              <div class="team-bio" data-lang="founder_bio">
+                Architect-urbanist with experience in 3D visualization, parametric design, and developing innovative solutions for architectural workflows.
+              </div>
             </div>
           </div>
         </div>
@@ -729,5 +739,6 @@
   <script src="js/effects.js"></script>
   <script src="js/language.js"></script>
   <script src="js/analysis-content.js"></script>
+  <script src="js/logo-interaction.js"></script>
 </body>
 </html>
