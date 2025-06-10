@@ -37,7 +37,7 @@ const translations = {
     point_cloud_market: "Point Cloud Software Market (2025)",
     users_by_geography: "SketchUp Users by Geography",
     users_by_profession: "SketchUp User Breakdown by Profession",
-    market_potential: "Even capturing just 5% of professional SketchUp users who work with point clouds (approximately 2,500-5,000 users) would yield a substantial market opportunity.",
+    market_potential: "Starting with 1% market capture and gradually scaling through targeted marketing and platform expansion beyond SketchUp, we aim to create a substantial and defensible market position.",
     
     // Slide 4: How it Works
     how_it_works: "How It Works",
@@ -62,8 +62,8 @@ const translations = {
     unmatched_performance_desc: "Work with large point clouds with responsive controls and smoother interaction",
     photo_visualization: "Photorealistic Visualization",
     photo_visualization_desc: "Gaussian Splatting creates continuous, detailed surfaces with accurate reflections and textures - eliminating the need to manually model complex elements",
-    next_gen: "Next-Generation Technology",
-    next_gen_desc: "Be at the forefront of architectural visualization with cutting-edge rendering techniques",
+    next_gen: "Defensible Technology Advantage",
+    next_gen_desc: "Our proprietary implementation creates high barriers to entry with technical advantages that are difficult to replicate, securing long-term market position",
     
     // Slide 6: Competitive Landscape
     competitive_landscape: "Competitive Landscape",
@@ -93,13 +93,13 @@ const translations = {
     partnerships: "Strategic Partnerships",
     partnerships_desc: "Potential bundling with laser scanner manufacturers and scanning service providers",
     revenue_projection: "Revenue Projection",
-    revenue_projection_desc: "With just 5% market capture (~5,000 users), potential $1.25-$2.5M annual recurring revenue",
+    revenue_projection_desc: "Starting with 1% market share and gradually expanding, we project annual revenue growth to $9M by year five",
     projected_revenue: "5-Year Projected Revenue",
     
     // Slide 8: Team
     team: "Our Team",
     founder: "Founder & Lead Developer",
-    founder_bio: "Experienced software engineer with expertise in computer graphics, 3D visualization, and SketchUp plugin development.",
+    founder_bio: "Architect-urbanist with experience in 3D visualization, parametric design, and developing innovative solutions for architectural workflows.",
     ai_assistant: "AI Assistant",
     dev_support: "Development Support",
     ai_bio: "Cutting-edge AI assistance for code optimization, testing, and documentation, helping to accelerate development cycles.",
@@ -183,7 +183,7 @@ const translations = {
     point_cloud_market: "Ринок ПЗ для хмар точок (2025)",
     users_by_geography: "Користувачі SketchUp за географією",
     users_by_profession: "Розподіл користувачів SketchUp за професією",
-    market_potential: "Навіть при залученні лише 5% професійних користувачів SketchUp, які працюють з хмарами точок (приблизно 2 500-5 000 користувачів), це дасть значні ринкові можливості.",
+    market_potential: "Починаючи з 1% захоплення ринку та поступово масштабуючись через цільовий маркетинг і розширення платформи за межі SketchUp, ми прагнемо створити суттєву та захищену ринкову позицію.",
     
     // Slide 4: How it Works
     how_it_works: "Як це працює",
@@ -208,8 +208,8 @@ const translations = {
     unmatched_performance_desc: "Робота з великими хмарами точок із чутливим керуванням та плавнішою взаємодією",
     photo_visualization: "Фотореалістична візуалізація",
     photo_visualization_desc: "Gaussian Splatting створює суцільні, деталізовані поверхні з точними відбиттями та текстурами - усуваючи потребу вручну моделювати складні елементи",
-    next_gen: "Технологія наступного покоління",
-    next_gen_desc: "Будьте на передньому краї архітектурної візуалізації з найсучаснішими техніками рендерингу",
+    next_gen: "Захищена технологічна перевага",
+    next_gen_desc: "Наша пропрієтарна реалізація створює високі бар'єри для входу з технічними перевагами, які важко відтворити, забезпечуючи довгострокову ринкову позицію",
     
     // Slide 6: Competitive Landscape
     competitive_landscape: "Конкурентний ландшафт",
@@ -239,13 +239,13 @@ const translations = {
     partnerships: "Стратегічні партнерства",
     partnerships_desc: "Можливе комплектування з виробниками лазерних сканерів та постачальниками послуг сканування",
     revenue_projection: "Прогноз доходів",
-    revenue_projection_desc: "Лише з 5% захопленням ринку (~5,000 користувачів), потенційний річний дохід $1.25-$2.5 мільйонів",
+    revenue_projection_desc: "Починаючи з 1% ринку та поступово розширюючись, ми проектуємо зростання річного доходу до $9 мільйонів на п'ятий рік",
     projected_revenue: "5-річний прогноз доходу",
     
     // Slide 8: Team
     team: "Наша команда",
     founder: "Засновник та головний розробник",
-    founder_bio: "Досвідчений інженер-програміст з досвідом у комп'ютерній графіці, 3D-візуалізації та розробці плагінів для SketchUp.",
+    founder_bio: "Архітектор-урбаніст із досвідом у 3D-візуалізації, параметричному проектуванні та розробці інноваційних рішень для архітектурних робочих процесів.",
     ai_assistant: "ШІ-асистент",
     dev_support: "Підтримка розробки",
     ai_bio: "Передова ШІ-допомога для оптимізації коду, тестування та документації, що допомагає прискорити цикли розробки.",
@@ -266,7 +266,7 @@ const translations = {
     launch_desc: "Випуск у Extension Warehouse, маркетингова кампанія та впровадження freemium-моделі",
     q1_2026: "1 кв. 2026",
     expansion: "Розширення",
-    expansion_desc: "Розширені функції (розпізнавання об'єктів на базі ШІ, автоматизація), розширення платформи (Rhino, Revit) та корпоративні рішення",
+    expansion_desc: "Розширені функції (розпізнавання об'єктів на базі ШІ, автоматизація), стратегічне розширення платформи на Rhino та Revit для багаторазового збільшення адресного ринку та корпоративні рішення",
     
     // Slide 10: Investment Opportunity
     investment: "Інвестиційна можливість",

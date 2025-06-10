@@ -407,7 +407,7 @@ function initializeCompetitorChart() {
         labels: revenueLabels,
         datasets: [{
           label: 'Projected Revenue ($M)',
-          data: [0.5, 1.5, 2.5, 3.8, 5.2],
+          data: [0.2, 0.8, 2.0, 4.5, 9.0],
           backgroundColor: function(context) {
             const chart = context.chart;
             const {ctx, chartArea} = chart;
